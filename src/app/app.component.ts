@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   template: `
     <!--The content below is only a placeholder and can be replaced.-->
     <h2 [appBackgroundColor]="'red'">Kolor czerwony: </h2>
-    
     <router-outlet></router-outlet>
+    <app-menu></app-menu>
   `,
   styles: []
 })
