@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BackgroundColorDirective } from './background-color.directive';
 
 import { SharedModule } from './shared/shared.module';
+import { LogicModule } from './logic/logic.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    LogicModule
   ],
   providers: [],
   bootstrap: [AppComponent]
