@@ -4,6 +4,7 @@ import { PageVideoListComponent } from './components/page-video-list/page-video-
 import { PageVideoNotFoundComponent } from './components/page-video-not-found/page-video-not-found.component';
 import { PageVideoProfileComponent } from './components/page-video-profile/page-video-profile.component';
 import { LogicRoutingModule } from './logic-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LogicRoutingModule } from './logic-routing.module';
   ],
   imports: [
     CommonModule,
-    LogicRoutingModule
+    LogicRoutingModule,
+    HttpClientModule
   ]
 })
 export class LogicModule { }

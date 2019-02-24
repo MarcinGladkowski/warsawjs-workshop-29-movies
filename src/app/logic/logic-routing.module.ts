@@ -6,11 +6,11 @@ import { PageVideoProfileComponent } from './components/page-video-profile/page-
 
 const routes: Routes = [
   {
-    path: '/list',
+    path: 'list',
     component: PageVideoListComponent
   },
   {
-    path: '/profile',
+    path: 'profile',
     component: PageVideoProfileComponent
   },
   {
