@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'movies',
-    loadChildren: './logic/logic.module#logicModule'
+    loadChildren: './logic/logic.module#LogicModule'
   }
 ];
 
