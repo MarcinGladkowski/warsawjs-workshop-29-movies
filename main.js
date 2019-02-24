@@ -36,8 +36,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _logic_page_home_page_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./logic/page-home/page-home.component */ "./src/app/logic/page-home/page-home.component.ts");
-/* harmony import */ var _logic_page_contact_page_contact_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./logic/page-contact/page-contact.component */ "./src/app/logic/page-contact/page-contact.component.ts");
+/* harmony import */ var _logic_components_page_home_page_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./logic/components/page-home/page-home.component */ "./src/app/logic/components/page-home/page-home.component.ts");
+/* harmony import */ var _logic_components_page_contact_page_contact_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./logic/components/page-contact/page-contact.component */ "./src/app/logic/components/page-contact/page-contact.component.ts");
 
 
 
@@ -46,11 +46,11 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     {
         path: '',
-        component: _logic_page_home_page_home_component__WEBPACK_IMPORTED_MODULE_3__["PageHomeComponent"]
+        component: _logic_components_page_home_page_home_component__WEBPACK_IMPORTED_MODULE_3__["PageHomeComponent"]
     },
     {
         path: 'kontakt',
-        component: _logic_page_contact_page_contact_component__WEBPACK_IMPORTED_MODULE_4__["PageContactComponent"]
+        component: _logic_components_page_contact_page_contact_component__WEBPACK_IMPORTED_MODULE_4__["PageContactComponent"]
     }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -58,7 +58,9 @@ var AppRoutingModule = /** @class */ (function () {
     }
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
+            imports: [
+                _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, { useHash: true })
+            ],
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
         })
     ], AppRoutingModule);
@@ -126,7 +128,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _background_color_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./background-color.directive */ "./src/app/background-color.directive.ts");
+/* harmony import */ var _shared_directives_background_color_directive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./shared/directives/background-color.directive */ "./src/app/shared/directives/background-color.directive.ts");
 /* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./shared/shared.module */ "./src/app/shared/shared.module.ts");
 /* harmony import */ var _logic_logic_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./logic/logic.module */ "./src/app/logic/logic.module.ts");
 
@@ -144,13 +146,13 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-                _background_color_directive__WEBPACK_IMPORTED_MODULE_5__["BackgroundColorDirective"],
+                _shared_directives_background_color_directive__WEBPACK_IMPORTED_MODULE_5__["BackgroundColorDirective"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
                 _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"],
-                _logic_logic_module__WEBPACK_IMPORTED_MODULE_7__["LogicModule"]
+                _logic_logic_module__WEBPACK_IMPORTED_MODULE_7__["LogicModule"],
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -163,10 +165,223 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/background-color.directive.ts":
-/*!***********************************************!*\
-  !*** ./src/app/background-color.directive.ts ***!
-  \***********************************************/
+/***/ "./src/app/logic/components/page-contact/page-contact.component.css":
+/*!**************************************************************************!*\
+  !*** ./src/app/logic/components/page-contact/page-contact.component.css ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvZ2ljL2NvbXBvbmVudHMvcGFnZS1jb250YWN0L3BhZ2UtY29udGFjdC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/logic/components/page-contact/page-contact.component.html":
+/*!***************************************************************************!*\
+  !*** ./src/app/logic/components/page-contact/page-contact.component.html ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  page-contact works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/logic/components/page-contact/page-contact.component.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/logic/components/page-contact/page-contact.component.ts ***!
+  \*************************************************************************/
+/*! exports provided: PageContactComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageContactComponent", function() { return PageContactComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var PageContactComponent = /** @class */ (function () {
+    function PageContactComponent() {
+    }
+    PageContactComponent.prototype.ngOnInit = function () {
+    };
+    PageContactComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-page-contact',
+            template: __webpack_require__(/*! ./page-contact.component.html */ "./src/app/logic/components/page-contact/page-contact.component.html"),
+            styles: [__webpack_require__(/*! ./page-contact.component.css */ "./src/app/logic/components/page-contact/page-contact.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], PageContactComponent);
+    return PageContactComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/logic/components/page-home/page-home.component.css":
+/*!********************************************************************!*\
+  !*** ./src/app/logic/components/page-home/page-home.component.css ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvZ2ljL2NvbXBvbmVudHMvcGFnZS1ob21lL3BhZ2UtaG9tZS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/logic/components/page-home/page-home.component.html":
+/*!*********************************************************************!*\
+  !*** ./src/app/logic/components/page-home/page-home.component.html ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  page-home works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/logic/components/page-home/page-home.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/logic/components/page-home/page-home.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: PageHomeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageHomeComponent", function() { return PageHomeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var PageHomeComponent = /** @class */ (function () {
+    function PageHomeComponent() {
+    }
+    PageHomeComponent.prototype.ngOnInit = function () {
+    };
+    PageHomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-page-home',
+            template: __webpack_require__(/*! ./page-home.component.html */ "./src/app/logic/components/page-home/page-home.component.html"),
+            styles: [__webpack_require__(/*! ./page-home.component.css */ "./src/app/logic/components/page-home/page-home.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], PageHomeComponent);
+    return PageHomeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/logic/logic.module.ts":
+/*!***************************************!*\
+  !*** ./src/app/logic/logic.module.ts ***!
+  \***************************************/
+/*! exports provided: LogicModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogicModule", function() { return LogicModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _components_page_home_page_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/page-home/page-home.component */ "./src/app/logic/components/page-home/page-home.component.ts");
+/* harmony import */ var _components_page_contact_page_contact_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/page-contact/page-contact.component */ "./src/app/logic/components/page-contact/page-contact.component.ts");
+
+
+
+
+
+var LogicModule = /** @class */ (function () {
+    function LogicModule() {
+    }
+    LogicModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            declarations: [
+                _components_page_home_page_home_component__WEBPACK_IMPORTED_MODULE_3__["PageHomeComponent"],
+                _components_page_contact_page_contact_component__WEBPACK_IMPORTED_MODULE_4__["PageContactComponent"]
+            ],
+            exports: [
+                _components_page_home_page_home_component__WEBPACK_IMPORTED_MODULE_3__["PageHomeComponent"],
+                _components_page_contact_page_contact_component__WEBPACK_IMPORTED_MODULE_4__["PageContactComponent"]
+            ],
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]
+            ]
+        })
+    ], LogicModule);
+    return LogicModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/components/menu/menu.component.css":
+/*!***********************************************************!*\
+  !*** ./src/app/shared/components/menu/menu.component.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL21lbnUvbWVudS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/menu/menu.component.html":
+/*!************************************************************!*\
+  !*** ./src/app/shared/components/menu/menu.component.html ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav>\n  <ul>\n    <li>\n        <a routerLink=\"/\">Strona głowna</a>\n    </li>\n    <li>\n        <a routerLink=\"/kontakt\">kontakt</a>\n    </li>\n  </ul>\n</nav>"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/menu/menu.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/shared/components/menu/menu.component.ts ***!
+  \**********************************************************/
+/*! exports provided: MenuComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuComponent", function() { return MenuComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var MenuComponent = /** @class */ (function () {
+    function MenuComponent() {
+    }
+    MenuComponent.prototype.ngOnInit = function () {
+    };
+    MenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-menu',
+            template: __webpack_require__(/*! ./menu.component.html */ "./src/app/shared/components/menu/menu.component.html"),
+            styles: [__webpack_require__(/*! ./menu.component.css */ "./src/app/shared/components/menu/menu.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], MenuComponent);
+    return MenuComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/directives/background-color.directive.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/shared/directives/background-color.directive.ts ***!
+  \*****************************************************************/
 /*! exports provided: BackgroundColorDirective */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -202,216 +417,6 @@ var BackgroundColorDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/logic/logic.module.ts":
-/*!***************************************!*\
-  !*** ./src/app/logic/logic.module.ts ***!
-  \***************************************/
-/*! exports provided: LogicModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogicModule", function() { return LogicModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _page_home_page_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./page-home/page-home.component */ "./src/app/logic/page-home/page-home.component.ts");
-/* harmony import */ var _page_contact_page_contact_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./page-contact/page-contact.component */ "./src/app/logic/page-contact/page-contact.component.ts");
-
-
-
-
-
-var LogicModule = /** @class */ (function () {
-    function LogicModule() {
-    }
-    LogicModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_page_home_page_home_component__WEBPACK_IMPORTED_MODULE_3__["PageHomeComponent"], _page_contact_page_contact_component__WEBPACK_IMPORTED_MODULE_4__["PageContactComponent"]],
-            exports: [
-                _page_home_page_home_component__WEBPACK_IMPORTED_MODULE_3__["PageHomeComponent"],
-                _page_contact_page_contact_component__WEBPACK_IMPORTED_MODULE_4__["PageContactComponent"]
-            ],
-            imports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]
-            ]
-        })
-    ], LogicModule);
-    return LogicModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/logic/page-contact/page-contact.component.css":
-/*!***************************************************************!*\
-  !*** ./src/app/logic/page-contact/page-contact.component.css ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvZ2ljL3BhZ2UtY29udGFjdC9wYWdlLWNvbnRhY3QuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/logic/page-contact/page-contact.component.html":
-/*!****************************************************************!*\
-  !*** ./src/app/logic/page-contact/page-contact.component.html ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  page-contact works!\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/logic/page-contact/page-contact.component.ts":
-/*!**************************************************************!*\
-  !*** ./src/app/logic/page-contact/page-contact.component.ts ***!
-  \**************************************************************/
-/*! exports provided: PageContactComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageContactComponent", function() { return PageContactComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var PageContactComponent = /** @class */ (function () {
-    function PageContactComponent() {
-    }
-    PageContactComponent.prototype.ngOnInit = function () {
-    };
-    PageContactComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-page-contact',
-            template: __webpack_require__(/*! ./page-contact.component.html */ "./src/app/logic/page-contact/page-contact.component.html"),
-            styles: [__webpack_require__(/*! ./page-contact.component.css */ "./src/app/logic/page-contact/page-contact.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], PageContactComponent);
-    return PageContactComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/logic/page-home/page-home.component.css":
-/*!*********************************************************!*\
-  !*** ./src/app/logic/page-home/page-home.component.css ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvZ2ljL3BhZ2UtaG9tZS9wYWdlLWhvbWUuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/logic/page-home/page-home.component.html":
-/*!**********************************************************!*\
-  !*** ./src/app/logic/page-home/page-home.component.html ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  page-home works!\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/logic/page-home/page-home.component.ts":
-/*!********************************************************!*\
-  !*** ./src/app/logic/page-home/page-home.component.ts ***!
-  \********************************************************/
-/*! exports provided: PageHomeComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageHomeComponent", function() { return PageHomeComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var PageHomeComponent = /** @class */ (function () {
-    function PageHomeComponent() {
-    }
-    PageHomeComponent.prototype.ngOnInit = function () {
-    };
-    PageHomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-page-home',
-            template: __webpack_require__(/*! ./page-home.component.html */ "./src/app/logic/page-home/page-home.component.html"),
-            styles: [__webpack_require__(/*! ./page-home.component.css */ "./src/app/logic/page-home/page-home.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], PageHomeComponent);
-    return PageHomeComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/shared/menu/menu.component.css":
-/*!************************************************!*\
-  !*** ./src/app/shared/menu/menu.component.css ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9tZW51L21lbnUuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/shared/menu/menu.component.html":
-/*!*************************************************!*\
-  !*** ./src/app/shared/menu/menu.component.html ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<nav>\n  <ul>\n    <li>\n        <a routerLink=\"/\">Strona głowna</a>\n    </li>\n    <li>\n        <a routerLink=\"/kontakt\">kontakt</a>\n    </li>\n  </ul>\n</nav>"
-
-/***/ }),
-
-/***/ "./src/app/shared/menu/menu.component.ts":
-/*!***********************************************!*\
-  !*** ./src/app/shared/menu/menu.component.ts ***!
-  \***********************************************/
-/*! exports provided: MenuComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuComponent", function() { return MenuComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var MenuComponent = /** @class */ (function () {
-    function MenuComponent() {
-    }
-    MenuComponent.prototype.ngOnInit = function () {
-    };
-    MenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-menu',
-            template: __webpack_require__(/*! ./menu.component.html */ "./src/app/shared/menu/menu.component.html"),
-            styles: [__webpack_require__(/*! ./menu.component.css */ "./src/app/shared/menu/menu.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], MenuComponent);
-    return MenuComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/shared/shared.module.ts":
 /*!*****************************************!*\
   !*** ./src/app/shared/shared.module.ts ***!
@@ -425,7 +430,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _menu_menu_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./menu/menu.component */ "./src/app/shared/menu/menu.component.ts");
+/* harmony import */ var _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/menu/menu.component */ "./src/app/shared/components/menu/menu.component.ts");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../app-routing.module */ "./src/app/app-routing.module.ts");
 
 
@@ -438,10 +443,10 @@ var SharedModule = /** @class */ (function () {
     SharedModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _menu_menu_component__WEBPACK_IMPORTED_MODULE_3__["MenuComponent"]
+                _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_3__["MenuComponent"]
             ],
             exports: [
-                _menu_menu_component__WEBPACK_IMPORTED_MODULE_3__["MenuComponent"]
+                _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_3__["MenuComponent"]
             ],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
