@@ -1,0 +1,8 @@
+<div>
+    <p>
+      Tytuł: {{ movie.title }}
+      Opis: {{ movie.description }}
+    </p>
+    <img [src]="movie.imageUrl" />
+    <a [routerLink]="['/movies/profile', movie.id]">Szczegóły filmu</a>
+</div>

@@ -5,18 +5,10 @@ import { PageVideoNotFoundComponent } from './components/page-video-not-found/pa
 import { PageVideoProfileComponent } from './components/page-video-profile/page-video-profile.component';
 
 const routes: Routes = [
-  {
-    path: 'list',
-    component: PageVideoListComponent
-  },
-  {
-    path: 'profile',
-    component: PageVideoProfileComponent
-  },
-  {
-    path: '**',
-    component: PageVideoNotFoundComponent
-  }
+  { path: '', redirectTo: 'list', pathMatch: 'full' },
+  { path: 'list', component: PageVideoListComponent },
+  { path: 'profile/:id', component: PageVideoProfileComponent},
+  { path: '**', component: PageVideoNotFoundComponent }
 ];
 
 @NgModule({

@@ -2,3 +2,5 @@
   Lista video
   <button (click)="getMovies()">Pobierz filmy</button>
 </p>
+
+<app-video-list *ngIf="movies" [moviesList]="movies"></app-video-list>

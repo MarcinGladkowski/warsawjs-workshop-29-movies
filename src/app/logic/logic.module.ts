@@ -5,12 +5,16 @@ import { PageVideoNotFoundComponent } from './components/page-video-not-found/pa
 import { PageVideoProfileComponent } from './components/page-video-profile/page-video-profile.component';
 import { LogicRoutingModule } from './logic-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { VideoListComponent } from './components/video-list/video-list.component';
+import { VideoItemComponent } from './components/video-item/video-item.component';
 
 @NgModule({
   declarations: [
     PageVideoListComponent,
     PageVideoNotFoundComponent,
-    PageVideoProfileComponent
+    PageVideoProfileComponent,
+    VideoListComponent,
+    VideoItemComponent
   ],
   exports: [
     PageVideoListComponent,
