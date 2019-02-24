@@ -14,7 +14,6 @@ import { LogicRoutingModule } from '../logic/logic-routing.module';
   imports: [
     CommonModule,
     AppRoutingModule,
-    LogicRoutingModule
   ]
 })
 export class SharedModule { }

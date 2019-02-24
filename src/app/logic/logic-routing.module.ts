@@ -5,6 +5,7 @@ import { PageVideoNotFoundComponent } from './components/page-video-not-found/pa
 import { PageVideoProfileComponent } from './components/page-video-profile/page-video-profile.component';
 
 const routes: Routes = [
+  
   {
     path: 'list',
     component: PageVideoListComponent
@@ -21,7 +22,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { useHash: true })
   ],
   exports: [RouterModule]
 })
