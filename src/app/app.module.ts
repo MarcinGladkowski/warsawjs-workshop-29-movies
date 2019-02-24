@@ -17,7 +17,7 @@ import { LogicModule } from './logic/logic.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    LogicModule
+    LogicModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
