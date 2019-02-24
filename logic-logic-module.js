@@ -18,7 +18,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  page-video-list works!\n</p>\n"
+module.exports = "<p>\n  Lista video\n  <button (click)=\"getMovies()\">Pobierz filmy</button>\n</p>\n"
 
 /***/ }),
 
@@ -34,12 +34,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageVideoListComponent", function() { return PageVideoListComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_movies_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/movies.service */ "./src/app/logic/services/movies.service.ts");
+
 
 
 var PageVideoListComponent = /** @class */ (function () {
-    function PageVideoListComponent() {
+    function PageVideoListComponent(moviesService) {
+        this.moviesService = moviesService;
     }
-    PageVideoListComponent.prototype.ngOnInit = function () {
+    PageVideoListComponent.prototype.ngOnInit = function () { };
+    PageVideoListComponent.prototype.getMovies = function () {
+        this.movies = this.moviesService.fetchMovies().then(function (res) { return console.log(res); });
+        ;
     };
     PageVideoListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -47,7 +53,7 @@ var PageVideoListComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./page-video-list.component.html */ "./src/app/logic/components/page-video-list/page-video-list.component.html"),
             styles: [__webpack_require__(/*! ./page-video-list.component.css */ "./src/app/logic/components/page-video-list/page-video-list.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_movies_service__WEBPACK_IMPORTED_MODULE_2__["MoviesService"]])
     ], PageVideoListComponent);
     return PageVideoListComponent;
 }());
@@ -74,7 +80,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  page-video-not-found works!\n</p>\n"
+module.exports = "<p>\n  Brak video\n</p>\n"
 
 /***/ }),
 
@@ -130,7 +136,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  page-video-profile works!\n</p>\n"
+module.exports = "<p>\n  profil video\n</p>\n"
 
 /***/ }),
 
@@ -192,11 +198,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [
     {
-        path: '/list',
+        path: 'list',
         component: _components_page_video_list_page_video_list_component__WEBPACK_IMPORTED_MODULE_3__["PageVideoListComponent"]
     },
     {
-        path: '/profile',
+        path: 'profile',
         component: _components_page_video_profile_page_video_profile_component__WEBPACK_IMPORTED_MODULE_5__["PageVideoProfileComponent"]
     },
     {
@@ -239,6 +245,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_page_video_not_found_page_video_not_found_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/page-video-not-found/page-video-not-found.component */ "./src/app/logic/components/page-video-not-found/page-video-not-found.component.ts");
 /* harmony import */ var _components_page_video_profile_page_video_profile_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/page-video-profile/page-video-profile.component */ "./src/app/logic/components/page-video-profile/page-video-profile.component.ts");
 /* harmony import */ var _logic_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./logic-routing.module */ "./src/app/logic/logic-routing.module.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
 
 
 
@@ -263,11 +271,55 @@ var LogicModule = /** @class */ (function () {
             ],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _logic_routing_module__WEBPACK_IMPORTED_MODULE_6__["LogicRoutingModule"]
+                _logic_routing_module__WEBPACK_IMPORTED_MODULE_6__["LogicRoutingModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClientModule"]
             ]
         })
     ], LogicModule);
     return LogicModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/logic/services/movies.service.ts":
+/*!**************************************************!*\
+  !*** ./src/app/logic/services/movies.service.ts ***!
+  \**************************************************/
+/*! exports provided: MoviesService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MoviesService", function() { return MoviesService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+
+var MoviesService = /** @class */ (function () {
+    function MoviesService(http) {
+        this.http = http;
+    }
+    MoviesService.prototype.fetchMovies = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.http.get('http://localhost:4200/assets/movies.json').toPromise()];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    MoviesService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], MoviesService);
+    return MoviesService;
 }());
 
 
